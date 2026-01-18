@@ -1,6 +1,6 @@
 # Game of Life Simulation
 
-A sophisticated cellular simulation project that models asexual and sexual reproduction strategies, complete with AI-powered analysis using local LLM integration.
+A sophisticated cellular simulation project that models asexual and sexual reproduction strategies, using Java with Spring and PostgreSQL, with complete AI-powered analysis using local LLM integration.
 
 ## Project Overview
 
