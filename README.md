@@ -54,10 +54,10 @@ game-of-life/
 Create a `.env` file in the `docker/` directory:
 
 ```env
-DB_NAME=exName
-DB_USER=exUser
-DB_PASSWORD=password_example
-LM_STUDIO_URL=http://localhost:1234
+DB_NAME=gameoflife
+DB_USER=postgres
+DB_PASSWORD=a_secure_password
+LM_STUDIO_URL=http://host.docker.internal:1234
 ```
 
 
@@ -150,7 +150,6 @@ GET http://localhost:8080/api/simulation/ai/test
   "status": "success",
   "message": "Connection successful! ..."
 }
-
 
 
 

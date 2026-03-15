@@ -17,8 +17,8 @@ public class CellManager {
     private final ResourcePool resourcePool;
     
     // STATS TRACKERS
-    private final AtomicInteger totalReproductions = new AtomicInteger(0); // Sexual
-    private final AtomicInteger totalDivisions = new AtomicInteger(0);     // Asexual (NEW)
+    private final AtomicInteger totalReproductions = new AtomicInteger(0);
+    private final AtomicInteger totalDivisions = new AtomicInteger(0);    
     
     private final AtomicReference<Double> timeScale = new AtomicReference<>(1.0);
     private boolean isPaused = false;

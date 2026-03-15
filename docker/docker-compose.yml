@@ -19,13 +19,12 @@ services:
     build:
       context: ../backend
       dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
+    network_mode: "host"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5454/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
-      LM_STUDIO_URL: ${LM_STUDIO_URL}
+      LM_STUDIO_URL: http://localhost:1234
     depends_on:
       db:
         condition: service_healthy

@@ -12,18 +12,21 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class LMStudioService {
     private final WebClient webClient;
+    private final String modelName;
 
-    public LMStudioService(@Value("${LM_STUDIO_URL:http://localhost:1234}") String apiUrl) {
+    public LMStudioService(@Value("${LM_STUDIO_URL:http://localhost:1234}") String apiUrl,
+                           @Value("${app.ai.model:qwen/qwen3-8b}") String modelName) {
         this.webClient = WebClient.builder()
                 .baseUrl(apiUrl)
                 .build();
+        this.modelName = modelName;
     }
 
     private String callLMStudioAPI(String prompt){
         try{
             Map<String, Object> requestBody = new HashMap<>();
             // Using a slightly more directive system prompt
-            requestBody.put("model", "qwen/qwen3-8b");
+            requestBody.put("model", modelName);
             requestBody.put("messages", List.of(
                     Map.of("role", "system", "content", "You are a software simulation logger. Provide a concise 3-sentence summary of the simulation run. Do not output internal thoughts."),
                     Map.of("role", "user", "content", prompt)

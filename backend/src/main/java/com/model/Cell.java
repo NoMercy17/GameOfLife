@@ -12,9 +12,6 @@ public abstract class Cell implements Runnable {
     protected CellManager manager;
     protected ResourcePool resourcePool;
     
-    // --- TUNING FOR "SMOOTH FLOW" ---
-    // Increased from 2000 to 5000. Cells wait 5 seconds before getting hungry again.
-    // This allows you to spam food without it disappearing instantly.
     protected static final int BASE_FULL_TIME = 5000;    
     
     protected static final int BASE_STARVE_TIME = 4000;  // slightly longer starve time too
